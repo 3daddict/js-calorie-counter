@@ -1,10 +1,10 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-// const OktaJwtVerifier = require('@okta/jwt-verifier')
+const OktaJwtVerifier = require('@okta/jwt-verifier')
 
-// const oktaJwtVerifier = new OktaJwtVerifier({
-//   issuer: 'https://dev-436201.oktapreview.com/oauth2/default'
-// })
+const oktaJwtVerifier = new OktaJwtVerifier({
+  issuer: 'https://dev-436201.oktapreview.com/oauth2/default'
+})
 
 const authenticationRequired = (req, res, next) => {
   if (!req.headers.authorization) {
